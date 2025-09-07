@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React Basics</title>
+    </head>
+    <body>
+        <div class="js-container"></div>
+
+
+<!-- attaching new JS file  -->
+        <!-- <script src="https://unpkg.com/supersimpledev@8.6.4/external-library.js"> </script> -->
+
+<!-- loads react external library -->
+    <!-- can be used in two places 
+        react = shared features 
+        react DOM = features specific to websites-->
+        <!-- to create websites you need to load react and react DOM -->
+        <!-- to create mobile apps you need react and react native -->
+        <script src="https://unpkg.com/supersimpledev/react.js"></script>
+        <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+        <!-- loads an external libraray "Babel" -->
+            <!-- babel translates other languages into JS -->
+            <!-- when using react we dont use normal JS, we use and enhanced version JSX ( javascript XML) which allows us to write HTML in our JS code -->
+        <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+        <!-- tells babel to translate JSX into JS -->
+        <script type="text/babel">
+
+            // whwen learning how to render on html element at a time 
+            const button = <button>hello</button>;
+            const paragraph = <p>React is blowing my mind RN!!! </p>
+
+            // learning how to display multiple elements at a time in React. ALWAYS KEEP YOUR HTML ON ITS OWN LINE
+            const div = (
+                <div>
+                    <button>hello</button>
+                    <p>React is blowing my mind RN!!! {2*6}</p>
+                </div>
+            );
+            // if we used the DOM in normal JS the code would be 
+            // const button = documnet.createElelment('button'); button.innerHTML = 'hello'
+            //code below sets up react 
+        const container = document.querySelector('.js-container');
+        ReactDOM.createRoot(container).render(div);
+        </script>
+    </body>
+</html>
